@@ -121,10 +121,10 @@ sensor:
             {
               if(id(desk_command).state == 1)
               {
-                id(desk).open();
+                id(desk).make_call().set_command_open();
               } else if(id(desk_command).state == 2)
               {
-                id(desk).close();
+                id(desk).make_call().set_command_close();
               } else if(id(desk_command).state == 3)
               {
                 id(switch_preset1).turn_on();
@@ -142,7 +142,7 @@ sensor:
                 id(switch_alarm).turn_on();
               } else if(id(desk_command).state == 8)
               {
-                id(desk).stop();
+                id(desk).make_call().set_command_stop().perform();
               }
             }
 
